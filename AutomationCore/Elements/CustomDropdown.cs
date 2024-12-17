@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace AutomationCore.Elements
 {
-    internal class CustomDropdown : BaseControl
+    public class CustomDropdown : BaseControl
     {
         public CustomDropdown(IWebDriver driver, By locator) : base(driver, locator)
         {

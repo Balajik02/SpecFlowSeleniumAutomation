@@ -22,7 +22,7 @@ namespace Automation.Tests.Steps
         {
             _container = container;
             _scenarioContext = scenarioContext;
-            driver = container.Resolve<IWebDriver>(); 
+            driver = _container.Resolve<IWebDriver>(); 
         }
     }
 }

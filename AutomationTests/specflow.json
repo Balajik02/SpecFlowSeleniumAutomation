@@ -1,0 +1,37 @@
+{
+  "$schema": "https://specflow.org/specflow-config-schema.json",
+  "specFlow": {
+    "bindingCulture": {
+      "language": "en-US"
+    },
+    "stepAssemblies": [],
+    "runtime": {
+      "stopOnStepFailure": true,
+      "missingOrPendingStepsOutcome": "Inconclusive"
+    },
+    "trace": {
+      "traceSuccessfulSteps": true,
+      "minTracedDuration": "0:0:0.1",
+      "traceTimings": false,
+      "verbosity": "Verbose"
+    },
+    "settings": {
+      "BaseUrl": "https://automationtesting.in/",
+      //"Browser": "Chrome",
+      "Browser": "Edge",
+      "ImplicitWaitTimeout": 10,
+      "PageLoadTimeout": 30,
+      "ExplicitWaitTimeout": 20,
+      "LogLevel": "Info",
+      "LogFilePath": "C:\\Logs\\TestLog.txt"
+    },
+    "connectionStrings": {
+      "DatabaseConnection": "Server=localhost;Database=TestDB;User Id=sa;Password=yourpassword;"
+    },
+    "environments": {
+      "Development": "https://dev.example.com",
+      "Staging": "https://staging.example.com",
+      "Production": "https://example.com"
+    }
+  }
+}

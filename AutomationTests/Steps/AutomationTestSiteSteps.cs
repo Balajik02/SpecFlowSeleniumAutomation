@@ -15,10 +15,11 @@ namespace Automation.Tests.Steps
         }
 
         [Given(@"I navigate to the registration page")]
-        public void NavigateToUrl()
+        public void NavigateToDemoSite()
         {
             string baseUrl = ConfigReader.GetAppSetting("BaseUrl");
             homePage.NavigateToPage(baseUrl);
+            homePage.NavLinkElement("Demo Site");
         }
     }
 }

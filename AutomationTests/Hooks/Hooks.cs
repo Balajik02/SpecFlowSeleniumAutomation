@@ -1,5 +1,6 @@
 ﻿using AutomationCore.Config;
 using AutomationCore.Drivers;
+using BoDi;
 using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
@@ -8,36 +9,38 @@ namespace Automation.Tests.Hooks
     [Binding]
     public class Hooks
     {
-        private readonly IWebDriver _driver;
+        private readonly IObjectContainer _objectContainer;
+     //   private IReport _report;
 
-        public Hooks(IWebDriver driver)
+        public Hooks(IObjectContainer objectContainer)
         {
-            _driver = driver;
+            _objectContainer = objectContainer;
         }
 
         string browser = ConfigReader.GetAppSetting("Browser");
+    //    string report = ConfigReader.GetAppSetting("ReportType");
 
         // Initialize the WebDriver before each scenario using DriverStartup
         [BeforeScenario]
         public void InitializeDriver()
         {
-            // Choose the driver type (Chrome, Edge, Firefox)
-            //DriverType driverType = DriverType.Chrome;  // You can change this as needed
-
-            // Get the driver instance from DriverStartup
-            //_driver = DriverStartup.CreateDriver(driverType);
-
-            DriverFactory.GetDriver(browser);
+            var driver = DriverFactory.GetDriver(browser);
+            _objectContainer.RegisterInstanceAs<IWebDriver>(driver);
+            
+         //   _report = ReportFactory.CreateReport(report);
+           // _report.IntializeReport();
         }
 
         // Clean up the WebDriver after each scenario
         [AfterScenario]
         public void CleanupDriver()
         {
-            if (_driver != null)
+            var driver = _objectContainer.Resolve<IWebDriver>();
+            if (driver != null)
             {
-                _driver.Quit();
+                driver.Quit();
             }
+         //   _report.GenerateReport();
         }
     }
 }

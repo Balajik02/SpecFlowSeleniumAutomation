@@ -2,7 +2,7 @@
 
 namespace AutomationCore.Elements
 {
-    internal class Radio : BaseControl
+    public class Radio : BaseControl
     {
         public Radio(IWebDriver driver, By locator) : base(driver, locator)
         {

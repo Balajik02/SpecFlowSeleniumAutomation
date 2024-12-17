@@ -9,12 +9,11 @@ namespace AutomationCore.Elements
         {
         }
 
-        public void ClickButton(IWebDriver driver, By locator)
+        public void ClickButton()
         {
             try
             {
                 Element.Click();
-                Console.WriteLine("Button clicked successfully.");
             }
             catch (NoSuchElementException ex)
             {
@@ -24,7 +23,7 @@ namespace AutomationCore.Elements
         }
 
         // Method to Check if Button is Enabled
-        public bool IsButtonEnabled(IWebDriver driver, By locator)
+        public bool IsButtonEnabled()
         {
             try
             {
@@ -38,13 +37,12 @@ namespace AutomationCore.Elements
         }
 
         // Method to Wait and Click a Button
-        public void WaitAndClickButton(IWebDriver driver, By locator, TimeSpan timeout)
+        public void WaitAndClickButton()
         {
             try
             {
                 WaitForElementClickable();
                 Element.Click();
-                Console.WriteLine("Button clicked after waiting successfully.");
             }
             catch (WebDriverTimeoutException ex)
             {
@@ -54,7 +52,7 @@ namespace AutomationCore.Elements
         }
 
         // Method to Get Button Text
-        public string GetButtonText(IWebDriver driver, By locator)
+        public string GetButtonText()
         {
             try
             {
@@ -68,7 +66,7 @@ namespace AutomationCore.Elements
         }
 
         // Method to Verify Button Visibility
-        public bool IsButtonVisible(IWebDriver driver, By locator)
+        public bool IsButtonVisible()
         {
             try
             {

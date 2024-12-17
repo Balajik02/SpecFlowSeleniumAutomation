@@ -3,7 +3,7 @@ using System;
 
 namespace AutomationCore.Elements
 {
-    internal class TextBox : BaseControl
+    public class TextBox : BaseControl
     {
         public TextBox(IWebDriver driver, By locator) : base(driver, locator)
         {

@@ -1,28 +1,32 @@
-﻿using AutomationCore.Config;
-using System;
+﻿using OpenQA.Selenium;
 
 namespace AutomationCore.Drivers
 {
     public static class DriverFactory
     {
-        public static IDriver GetDriver(string browser)
+        public static IWebDriver GetDriver(string browser)
         {
+            IDriver driver;
             switch (browser)
             {
                 case "Chrome":
-                    return new ChromeDriver();
+                    driver = new ChromeDriver();
+                    break;
                 case "Edge":
-                    return new EdgeDriver();
+                    driver = new EdgeDriver();
+                    break;
                 default:
-                    throw new ArgumentException($"Unsupported driver type: {browser}");
+                    //throw new ArgumentException($"Unsupported driver type: {browser}");
+                    driver = new ChromeDriver();
+                    break;
             }
-            //string browser = ConfigReader.GetAppSetting("Browser");
             //IDriver driver = browser switch
             //{
             //    "Chrome" => new ChromeDriver(),
             //    "Edge" => new EdgeDriver(),
             //    _ => throw new ArgumentException($"Unsupported browser: {browser}")
             //};
+            return driver.CreateDriver();
         }
     }
 }

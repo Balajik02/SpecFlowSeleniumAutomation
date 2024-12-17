@@ -2,7 +2,7 @@
 
 namespace AutomationCore.Elements
 {
-    internal class Element : BaseControl
+    public class Element : BaseControl
     {
         public Element(IWebDriver driver, By locator) : base(driver, locator)
         {

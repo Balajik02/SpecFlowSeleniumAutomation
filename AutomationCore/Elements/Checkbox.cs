@@ -2,7 +2,7 @@
 
 namespace AutomationCore.Elements
 {
-    internal class Checkbox : BaseControl
+    public class Checkbox : BaseControl
     {
         public Checkbox(IWebDriver driver, By locator) : base(driver, locator)
         {

@@ -27,7 +27,8 @@ namespace Automation.Tests.Features
         
         private Microsoft.VisualStudio.TestTools.UnitTesting.TestContext _testContext;
         
-        private static string[] featureTags = ((string[])(null));
+        private static string[] featureTags = new string[] {
+                "register"};
         
 #line 1 "RegisterForm.feature"
 #line hidden
@@ -94,9 +95,9 @@ namespace Automation.Tests.Features
         
         public virtual void FeatureBackground()
         {
-#line 7
-  #line hidden
 #line 8
+ #line hidden
+#line 9
    testRunner.Given("I navigate to the registration page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
         }
@@ -104,13 +105,14 @@ namespace Automation.Tests.Features
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Successful registration with all valid inputs")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RegisterForm")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("register")]
         public void SuccessfulRegistrationWithAllValidInputs()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successful registration with all valid inputs", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 10
-  this.ScenarioInitialize(scenarioInfo);
+#line 11
+ this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
@@ -119,41 +121,11 @@ namespace Automation.Tests.Features
             else
             {
                 this.ScenarioStart();
-#line 7
-  this.FeatureBackground();
-#line hidden
-#line 11
-    testRunner.When("I enter \"John Doe\" into the \"Full Name\" textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 8
+ this.FeatureBackground();
 #line hidden
 #line 12
-    testRunner.And("I enter \"john.doe@example.com\" into the \"Email\" textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 13
-    testRunner.And("I enter \"password123\" into the \"Password\" textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 14
-    testRunner.And("I re-enter \"password123\" into the \"Confirm Password\" textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 15
-    testRunner.And("I select \"Male\" from the radio buttons for \"Gender\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 16
-    testRunner.And("I check the checkbox for \"I agree to the terms and conditions\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 17
-    testRunner.And("I select \"India\" from the \"Country\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 18
-    testRunner.And("I select \"1990-12-25\" as the \"Date of Birth\" using the date picker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 19
-    testRunner.And("I click on the \"Register\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 20
-    testRunner.Then("I should see a success message \"Registration completed successfully\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 56
-    testRunner.Then("I should see an error message \"Passwords do not match\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.When("I fill out the register form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -9,7 +9,7 @@ namespace AutomationCore.DriverService
         readonly IWebDriver _webdriver;
         public BasePage(IWebDriver webdriver) 
         {
-            _webdriver = webdriver; throw new ArgumentNullException(nameof(webdriver));
+            _webdriver = webdriver ?? throw new ArgumentNullException(nameof(webdriver));
         }
 
         public void NavigateToPage(string url)

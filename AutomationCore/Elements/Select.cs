@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace AutomationCore.Elements
 {
-    internal class Select : BaseControl
+    public class Select : BaseControl
     {
         public Select(IWebDriver driver, By locator) : base(driver, locator)
         {
